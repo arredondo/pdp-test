@@ -1,0 +1,93 @@
+header {
+    .box-shadow(0 16px 16px rgba(29,53,87,.05));
+    background-color: @white;
+    position: fixed;
+    padding: @unit*2 0;
+    z-index: 10;
+    @media @small {
+        .align-items(flex-start);
+        height: @unit*24;
+    }
+}
+._header {
+    .flex-display;
+    .flex-grow(1);
+    .justify-content(flex-start);
+    .align-items(center);
+    margin: 0 auto;
+    max-width: 1366px;
+    @media @small {
+        .justify-content(space-between);
+        padding-left: @unit;
+        padding-right: @unit;
+    }
+    ._logo {
+        margin-right: 10%;
+        @media @small {
+            margin-right: @unit;
+        }
+        img {
+            @media @small {
+                max-width: 120px;
+            }
+        }
+    }
+    ._searchbar {
+        .flex-display;
+        .flex-grow(1);
+        .radius(@unit*6);
+        box-sizing: border-box;
+        background-color: @theme_green;
+        padding: @unit;
+        height: 48px;
+        margin-right: 20px;
+        @media @small {
+            position: absolute;
+            top: @unit*14;
+            width: ~"calc(100% - 16px)";
+            margin-left: @unit*2;
+        }
+        input {
+            .flex-grow(1);
+            .radius(@unit*6);
+            .aparience-reset;
+            background-color: @theme_green;
+            border:0;
+            padding: @unit*3;
+        }
+        button {
+            .aparience-reset;
+            .radius(@unit*6);
+            box-sizing: border-box;
+            height: @unit*10;
+            width: @unit*10;
+            background-color: @theme_blue2;
+            border: 0;
+        }
+    }
+    ._account {
+        margin-left: 10%;
+        margin-right: @unit*2;
+        @media @small {
+            margin-left: @unit;
+        }
+        a {
+            .flex-display;
+            text-decoration: none;
+            line-height: 1;
+            @media @small {
+                .font-size(12);
+                white-space: nowrap;
+            }
+            strong {
+                font-weight: 400;
+            }
+            span {
+                .flex-display;
+                .flex-direction(column);
+                .align-items(flex-end);
+                margin-right: @unit;
+            }            
+        }
+    }
+}

@@ -1,0 +1,59 @@
+html {
+    body {
+        margin: 0;
+        font-family: @font_gral;
+        font-weight: 300;
+        .text-smoot;
+        .font-size(16);
+        color: @black;
+    }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    line-height: 1.2;
+}
+a {
+    color:@theme_color;
+    &:hover {
+        color: @enfasis_color;
+    }
+}
+h1 {
+    @media @small {
+        .font-size(24) ;
+    }
+}
+h2 {
+    @media @small {
+        .font-size(20) ;
+    }
+}
+h3 {
+    @media @small {
+        .font-size(18) ;
+        margin-bottom: @unit;
+        margin-top: @unit*3;
+    }
+}
+header,
+main,
+footer {
+    .flex-display;
+    width: 100%;
+}
+
+main {
+    padding-top: @unit*24;
+    @media @small {
+        padding-top: @unit*29;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}

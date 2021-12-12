@@ -1,0 +1,308 @@
+// Generales
+@font_gral     : 'Poppins', Helvetica, Sans-Serif;
+@font_titles   : 'Playfair Display', 'Times New Roman', Serif;
+@ico_font      : ~"'ico-font'";
+
+@enfasis_color : #E63946;
+@theme_color   : #1D3557;
+@theme_green   : #F1FAEE;
+@theme_blue    : #A8DADC;
+@theme_blue2   : #457B9D;
+@white         : #fff;
+@black         : #000;
+@softGray      : #CCC;
+@unit          : 4px;
+
+// Notification variables
+@notificationColors : #ED5565, #A0D468, #F6BB42, #5D9CEC;
+@names  : error, success, attention, info;
+@length : length(@notificationColors);
+
+.font-size(@size : 16) {
+    @rem : ((@size / 16) / (1.062));
+    font-size: @size * 1px;
+    font-size: ~"@{rem}rem";
+}
+
+.opacity (@opacity: 0.5) {
+	-webkit-opacity: 	@opacity;
+	-moz-opacity: 		@opacity;
+	opacity: 		    @opacity;
+}
+
+.radius (@radius:4px;){
+    border-radius:       @radius;
+  -moz-border-radius:    @radius;
+  -webkit-border-radius: @radius;
+}
+.rotate (@rotate:7deg){
+    -ms-transform: rotate(@rotate); /* IE 9 */
+    -webkit-transform: rotate(@rotate); /* Chrome, Safari, Opera */
+    transform: rotate(@rotate);
+}
+.text-shadow (@shadow-string: 1px 3px 5px rgba(0, 0, 0, 0.5)) {
+	text-shadow: @shadow-string;
+}
+
+.text-smoot {
+  text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+}
+
+.box-shadow (@shadow-string: 0px 2px 7px 3px rgba(0, 0, 0, 0.08)) {
+	-webkit-box-shadow: @shadow-string;
+	-moz-box-shadow:    @shadow-string;
+	box-shadow:         @shadow-string;
+}
+
+.aparience-reset {
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+}
+
+.transform-translate(@trans1:-50%, @trans2:-50%) {
+	-ms-transform:    translate(@trans1, @trans2); /* IE 9 */
+   -webkit-transform: translate(@trans1, @trans2); /* Safari */
+   transform:         translate(@trans1, @trans2);
+}
+
+.transition(@property:all, @duration:0.3s, @ease:ease-in-out) {
+  -webkit-transition: @property @duration @ease;
+  -moz-transition:    @property @duration @ease;
+  -o-transition:      @property @duration @ease;
+  -ms-transition:     @property @duration @ease;
+  transition:         @property @duration @ease;
+}
+
+.gradient (@gradient_color1:rgba(0,0,0,1), @gradient_color2:rgba(0,0,0,0)) {
+    background-color:  @gradient_color2;
+    background-image:  -ms-linear-gradient(top left, @gradient_color1 0%, @gradient_color2 100%);
+    background-image:  -webkit-linear-gradient(top, @gradient_color1, @gradient_color2);
+    background-image:  -moz-linear-gradient(top, @gradient_color1, @gradient_color2);
+    background-image:  -o-linear-gradient(top, @gradient_color1, @gradient_color2);
+    background-image:  -webkit-gradient(linear, left top, left bottom, from(@gradient_color1), to(@gradient_color2));
+    background-image:  linear-gradient(top, @gradient_color1, @gradient_color2);
+}
+
+.ul-reset {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+// Fonts
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('fonts/Poppins/Poppins-Light.ttf'), url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLDz8Z11lFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('fonts/Poppins/Poppins-Light.ttf'), url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLDz8Z1JlFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('fonts/Poppins/Poppins-Light.ttf'), url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLDz8Z1xlFd2JQEk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('fonts/Poppins/Poppins-Regular.ttf'), url(https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJbecnFHGPezSQ.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('fonts/Poppins/Poppins-Light.ttf'), url(https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('fonts/Poppins/Poppins-Regular.ttf'), url(https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('fonts/Poppins/Poppins-Medium.ttf'), url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z11lFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('fonts/Poppins/Poppins-Medium.ttf'), url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z1JlFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('fonts/Poppins/Poppins-Medium.ttf'), url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z1xlFd2JQEk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+// Breachpoints
+
+@xsmall: ~"all and (max-width: 360px)";
+@small: ~"all and (max-width: 767px)";
+@medium: ~"all and (min-width: 768px) and (max-width: 979px)";
+@large: ~"all and (min-width: 980px) and (max-width: 1399px)";
+@xlarge: ~"all and (min-width: 1400px)";
+
+// --------------------------------------------------
+// Flexbox LESS mixins
+// The spec: http://www.w3.org/TR/css3-flexbox
+// --------------------------------------------------
+
+// Flexbox display
+// flex or inline-flex
+.flex-display(@display: flex) {
+	display: ~"-webkit-@{display}";
+	display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+	display: ~"-ms-@{display}"; // IE11
+	display: @display;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+.flex(@columns: initial) {
+  -webkit-flex: @columns;
+      -ms-flex: @columns;
+          flex: @columns;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+.flex-direction(@direction: row) {
+  -webkit-flex-direction: @direction;
+      -ms-flex-direction: @direction;
+          flex-direction: @direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+.flex-wrap(@wrap: nowrap) {
+  -webkit-flex-wrap: @wrap;
+      -ms-flex-wrap: @wrap;
+          flex-wrap: @wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+.flex-flow(@flow) {
+  -webkit-flex-flow: @flow;
+      -ms-flex-flow: @flow;
+          flex-flow: @flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+.flex-order(@order: 0) {
+  -webkit-order: @order;
+      -ms-order: @order;
+          order: @order;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+.flex-grow(@grow: 0) {
+  -webkit-flex-grow: @grow;
+      -ms-flex-grow: @grow;
+          flex-grow: @grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number> 
+.flex-shrink(@shrink: 1) {
+  -webkit-flex-shrink: @shrink;
+      -ms-flex-shrink: @shrink;
+          flex-shrink: @shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex items
+// <width> 
+.flex-basis(@width: auto) {
+  -webkit-flex-basis: @width;
+      -ms-flex-basis: @width;
+          flex-basis: @width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around 
+.justify-content(@justify: flex-start) {
+  -webkit-justify-content: @justify;
+      -ms-justify-content: @justify;
+          justify-content: @justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch 
+.align-content(@align: stretch) {
+  -webkit-align-content: @align;
+      -ms-align-content: @align;
+          align-content: @align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch 
+.align-items(@align: stretch) {
+  -webkit-align-items: @align;
+      -ms-align-items: @align;
+          align-items: @align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch 
+.align-self(@align: auto) {
+  -webkit-align-self: @align;
+      -ms-align-self: @align;
+          align-self: @align;
+}
